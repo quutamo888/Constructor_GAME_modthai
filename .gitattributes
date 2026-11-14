@@ -1,0 +1,11 @@
+# Ensure Windows batch files always retain CRLF line endings
+*.bat text eol=crlf
+*.txt text eol=crlf
+*.md text eol=crlf
+
+# Binary assets
+*.dll binary
+*.exe binary
+*.FIL binary
+*.thai binary
+*.png binary
