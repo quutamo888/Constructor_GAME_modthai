@@ -29,14 +29,20 @@ echo.
 
 :: Backup original files
 if not exist "%TARGET_DIR%\Master\DATA\DATA.FIL.original" (
-    if exist "%TARGET_DIR%\Master\DATA\DATA.FIL" (
+    if exist "%TARGET_DIR%\Master\DATA\DATA.FIL.bak" (
+        echo [1/3] Found original backup, creating DATA.FIL.original...
+        copy /y "%TARGET_DIR%\Master\DATA\DATA.FIL.bak" "%TARGET_DIR%\Master\DATA\DATA.FIL.original" >nul
+    ) else if exist "%TARGET_DIR%\Master\DATA\DATA.FIL" (
         echo [1/3] Backing up original DATA.FIL...
         copy /y "%TARGET_DIR%\Master\DATA\DATA.FIL" "%TARGET_DIR%\Master\DATA\DATA.FIL.original" >nul
     )
 )
 
 if not exist "%TARGET_DIR%\Master\FONTS\DATA.FIL.original" (
-    if exist "%TARGET_DIR%\Master\FONTS\DATA.FIL" (
+    if exist "%TARGET_DIR%\Master\FONTS\DATA.FIL.bak" (
+        echo [2/3] Found original backup, creating FONTS DATA.FIL.original...
+        copy /y "%TARGET_DIR%\Master\FONTS\DATA.FIL.bak" "%TARGET_DIR%\Master\FONTS\DATA.FIL.original" >nul
+    ) else if exist "%TARGET_DIR%\Master\FONTS\DATA.FIL" (
         echo [2/3] Backing up original FONTS DATA.FIL...
         copy /y "%TARGET_DIR%\Master\FONTS\DATA.FIL" "%TARGET_DIR%\Master\FONTS\DATA.FIL.original" >nul
     )
